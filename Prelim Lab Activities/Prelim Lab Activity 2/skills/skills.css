@@ -1,0 +1,128 @@
+/* CSS */
+
+/* 1. Modern Font for entire page */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f6f9; /* very light page background */
+  margin: 0;
+  padding: 20px;
+}
+
+/* Section Styling with Gradient, Borders, Shadow */
+.profile-section,
+.why-hire-section,
+.skills-section {
+  margin-bottom: 35px;
+  padding: 25px;
+  border: 1px solid #D1D9E6;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff, #f7f9fc);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-section:hover,
+.why-hire-section:hover,
+.skills-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #2E3A59;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #C4DFE5;
+  text-transform: uppercase;
+}
+
+/* Paragraph Text */
+.profile-text {
+  font-size: 1rem;
+  color: #4A4A4A;
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+/* Subtle shades for Personal Profile sentences */
+.sentence-1 {
+  color: #4A4A4A; /* dark gray */
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sentence-2 {
+  color: #5E5E5E; /* medium gray */
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sentence-3 {
+  color: #6B6B6B; /* lighter gray */
+  display: block;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #4A4A4A;
+  line-height: 1.6;
+}
+
+.skills-list li::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  color: #2E3A59; /* subtle dark bullet */
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-text,
+  .skills-list li {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}

@@ -1,0 +1,83 @@
+.technical-skills,
+.references-section {
+  margin-bottom: 35px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #3B3B3B; /* darker gray instead of bright indigo */
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #A9CFC0; /* softer mint green */
+  text-transform: uppercase;
+}
+
+/* Technical Skills */
+.tech-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tech-category {
+  background-color: #E3E6E4; /* muted gray-green */
+  padding: 15px 20px;
+  border-radius: 5px;
+  border-left: 4px solid #3B3B3B; /* darker gray accent */
+}
+
+.category-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #3B3B3B;
+  margin-bottom: 8px;
+}
+
+.tech-items {
+  font-size: 0.95rem;
+  color: #4F4F4F; /* softer gray for text */
+  line-height: 1.6;
+}
+
+/* References Section */
+.references-list p {
+  font-size: 0.95rem;
+  color: #4F4F4F;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tech-categories {
+    gap: 15px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .category-title {
+    font-size: 1rem;
+  }
+
+  .tech-items,
+  .references-list p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .tech-items,
+  .references-list p {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,55 @@
+.cv-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  color: #4A4E69; /* muted indigo */
+}
+
+.contact-info {
+  font-size: 0.95rem;
+  color: #5E5E5E;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-item {
+  display: inline-block;
+}
+
+.contact-item strong {
+  font-weight: 600;
+  color: #4A4A4A;
+}
+
+.contact-item a {
+  color: #4A4E69; /* readable link */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #9A8C98; /* soft lavender accent */
+  text-decoration: underline;
+}
+
+.separator {
+  color: #CDE9DC; /* mint green */
+  margin: 0 5px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #E9ECCE, transparent);
+  margin-top: 20px;
+}
