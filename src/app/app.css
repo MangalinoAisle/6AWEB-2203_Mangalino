@@ -1,0 +1,56 @@
+/* app.css - FINAL LAYOUT, SIZING, AND THEME */
+
+/* --- MAIN CONTENT CONTAINER (The "Paper" Layout) --- */
+.cv-main-container {
+  /* Enforces fixed width and centers the entire content block */
+  max-width: 900px; 
+  margin: 30px auto; 
+  background-color: #FFFFFF; /* White background for the 'page' */
+  padding: 40px 60px; 
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); 
+  border-radius: 12px;
+  border: 1px solid #F0F0F0;
+}
+
+/* --- THEME & SIZING FOR ALL EMBEDDED COMPONENTS --- */
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #4A4A4A; 
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #B37C70; /* Terracotta line */
+  text-transform: uppercase;
+}
+
+/* Ensures sections inside the container look organized */
+.profile-section,
+.skills-section,
+.technical-skills,
+.references-section {
+  width: 100%;
+  padding: 0; 
+  margin: 0 0 25px 0; /* Consistent bottom spacing */
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important; 
+}
+
+/* Ensures internal text colors match the dark brown theme */
+.profile-text,
+.skills-list li,
+.references-list p,
+.tech-items {
+  color: #4A4A4A !important;
+}
+
+.skills-list li::before {
+  color: #B37C70 !important; /* Terracotta bullet */
+}
+
+.tech-category {
+  background-color: #F3E8DF !important; /* Light accent background */
+  border-left: 4px solid #B37C70 !important; /* Terracotta accent bar */
+}

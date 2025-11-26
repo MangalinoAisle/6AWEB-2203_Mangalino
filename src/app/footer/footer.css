@@ -1,0 +1,92 @@
+/* footer.css - FINAL FULL CODE: SIZING, ORGANIZATION, AND CAHAYA DEWI THEME */
+
+:host {
+    display: block;
+    width: 100%;
+    /* Ensures margin/padding is controlled by the main layout container */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.technical-skills,
+.references-section {
+    width: 100%;
+    /* Ensures sections start clean within the layout */
+    padding: 0 !important; 
+    margin: 0 0 35px 0 !important; 
+    
+    /* Organization: Thin dividing line and top spacing */
+    border-top: 1px solid #E0E0E0; 
+    padding-top: 25px;
+}
+
+/* 1. TYPOGRAPHY AND FONT CONSISTENCY */
+
+/* Sub-Category Titles (Design Tools, Development) - Matches Key Skills Body Text Size */
+.category-title {
+    font-size: 0.95rem; 
+    font-weight: 600;
+    color: #4A4A4A; 
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* List/Item Text (Tools listed, Professor details) - Matches Key Skills Body Text Size */
+.tech-items,
+.references-list p {
+    font-size: 0.95rem; 
+    color: #4A4A4A;
+    line-height: 1.6;
+}
+
+/* 2. TECHNICAL PROFICIENCIES ORGANIZATION */
+
+.tech-categories {
+    /* Uses Grid for a structured, two-dimensional layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.tech-category {
+    /* Elegant Box Styling */
+    background-color: #F3E8DF; /* Light accent background */
+    padding: 15px 15px 15px 10px; 
+    border-radius: 5px;
+    border: 1px solid #E0E0E0; 
+    border-left: 4px solid #B37C70; /* CRUCIAL: Terracotta accent bar */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. REFERENCES SECTION ORGANIZATION */
+
+.references-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Vertical space between each reference */
+    margin-top: 15px;
+}
+
+/* Individual Reference Block Styling */
+.references-list p.profile-text {
+    margin-bottom: 0; 
+    /* Subtle accent border for separation */
+    border-left: 3px solid #F3E8DF; 
+    padding: 5px 0 5px 12px;
+}
+
+/* Styling the Name (Strong Tag) */
+.references-list p strong {
+    font-size: 1rem; 
+    color: #B37C70; /* Highlight name in Terracotta */
+    font-weight: 700;
+}
+
+/* Styling the Title (Emphasis Tag) */
+.references-list p em {
+    font-style: normal; 
+    color: #4A4A4A; 
+    display: block; 
+}

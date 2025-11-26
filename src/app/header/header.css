@@ -1,0 +1,123 @@
+/* header.css - FINAL LAYOUT, SIZING, AND THEME */
+
+/* 1. HOST FIX: Ensures component fits layout and adds top/bottom spacing */
+:host {
+    display: block;
+    width: 100%;
+    margin: 0 0 40px 0 !important; /* Increased spacing below the header block */
+    padding: 0 !important;
+}
+
+/* 2. FLEX CONTAINER FOR ASYMMETRICAL LAYOUT */
+.cv-header {
+    display: flex; /* Enables flexible column layout */
+    justify-content: space-between; /* Pushes content to the left and right edges */
+    align-items: flex-start; /* Aligns content to the top */
+    width: 100%;
+    margin-bottom: 0 !important;
+    padding: 0 !important; 
+    background-color: transparent; 
+}
+
+/* --- LEFT COLUMN: NAME & TITLE --- */
+.name-title-column {
+    /* Takes up about 60% of the space for the large name */
+    flex: 3; 
+    padding-right: 30px;
+    text-align: left; /* Name/Title aligned to the left */
+}
+
+.name {
+    font-size: 3.2rem; /* Larger font for impact */
+    font-weight: 900; /* Extra bold */
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #4A4A4A; /* Dark Brown/Gray */
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.job-title {
+    /* Reusing a style or applying a new one for the 'UX/UI DESIGNER' line */
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #B37C70; /* Terracotta accent color for the subtitle */
+    letter-spacing: 1.5px;
+    margin-top: 0;
+}
+
+/* --- RIGHT COLUMN: CONTACT INFO & DIVIDER --- */
+.contact-column {
+    /* Takes up about 40% of the space */
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align all contact details to the right */
+    border-left: 1px solid #D0D0D0; /* Vertical divider line (subtle gray) */
+    padding-left: 30px;
+}
+
+.contact-info {
+    font-size: 1.0rem;
+    color: #4A4A4A; 
+    /* Changes contact info from inline to block for stacking */
+    display: block; 
+    margin-bottom: 10px;
+    text-align: right; /* Text aligns to the right side of the column */
+}
+
+.contact-item {
+    display: block; /* Stacks contact items vertically */
+    margin-bottom: 5px;
+}
+
+.contact-item strong {
+    font-weight: 600;
+    color: #4A4A4A;
+}
+
+.contact-item a {
+    color: #B37C70; /* Terracotta links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Remove the unused separator from the original design */
+.separator {
+    display: none; 
+}
+
+/* Divider is not needed here as the border-left serves as the divider */
+.divider {
+    display: none; 
+}
+
+/* --- Responsive Adjustments (Required for readability) --- */
+@media (max-width: 768px) {
+    .cv-header {
+        /* Stack the two columns vertically on smaller screens */
+        flex-direction: column;
+    }
+    .name-title-column,
+    .contact-column {
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        border-left: none; /* Remove vertical divider when stacked */
+        text-align: center; /* Center everything when stacked */
+    }
+    .name {
+        font-size: 2.5rem;
+    }
+    .job-title {
+        margin-bottom: 15px;
+    }
+    .contact-column {
+        align-items: center;
+        margin-top: 20px;
+    }
+    .contact-info {
+        text-align: center;
+    }
+}

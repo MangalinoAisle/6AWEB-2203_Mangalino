@@ -1,0 +1,141 @@
+/* data-binding-demo.css - FINAL ORGANIZED LAYOUT & SIZING */
+
+:host {
+  display: block;
+  width: 100%;
+  max-width: 100% !important; 
+  margin: 0 !important; 
+  padding: 30px;
+  
+  /* Themed appearance */
+  background-color: #FFFFFF; 
+  color: #4A4A4A; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  border: 1px solid #E0E0E0; /* Added subtle border */
+  font-family: 'Times New Roman', Times, serif; 
+}
+
+/* --- 1. SECTION TITLES & HEADERS --- */
+
+h1 {
+  /* Main Demo Title (e.g., Angular Data Binding Demonstration) */
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #B37C70; /* Terracotta */
+  border-bottom: 3px solid #B37C70;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  
+  /* --- CRITICAL FIX: Center the text --- */
+  text-align: center; 
+}
+
+h2 {
+  /* Section Headings (e.g., 1. Text Interpolation) - Consistent Size */
+  font-size: 1.6rem; 
+  font-weight: 600;
+  color: #4A4A4A;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  /* Dynamic Content Headings (e.g., My First App!) */
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #4A4A4A;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* --- 2. BODY TEXT & EXPLANATIONS (Consistent Sizing) --- */
+
+p {
+  /* Explanatory text (e.g., Displays dynamic content...) */
+  font-size: 1.2rem; 
+  color: #555555; /* Slightly muted color for explanatory text */
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+code {
+  /* Binding syntax (e.g., {{ expression }}) */
+  font-size: 1.2rem; 
+  font-weight: bold;
+  color: #B37C70; /* Highlighted in Terracotta */
+  background-color: #F3E8DF; /* Light beige background */
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* --- 3. DEMONSTRATION ELEMENTS (Consistent Sizing) --- */
+
+/* Targets the output P tag after the explanation P tag for dynamic content sizing */
+p:not([class]):not([style]) + p {
+  font-size: 1.4rem; 
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+/* Two-Way Binding Output (Hello, ****!) - Final Output Size */
+p:last-of-type {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* --- 4. FORMS & BUTTONS (Cute and Interactive) --- */
+
+input {
+  background-color: #FFFFFF;
+  color: #4A4A4A;
+  border: 1px solid #D0D0D0;
+  border-radius: 5px;
+  padding: 8px 10px; 
+  width: 100%;
+  max-width: 300px; 
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+input:focus {
+  border-color: #B37C70; /* Highlight input with Terracotta */
+  box-shadow: 0 0 5px rgba(179, 124, 112, 0.5); 
+  outline: none;
+}
+
+button {
+  background-color: #B37C70; 
+  color: #FFFFFF;
+  font-weight: 500;
+  padding: 8px 15px; 
+  margin-right: 10px;
+  border-radius: 6px; /* Cute rounding */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+button:hover {
+  background-color: #9E6B60; /* Hover effect */
+  transform: translateY(-1px); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(1px); /* Press effect */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.reset-button {
+  background-color: #7D7D7D; 
+}
+
+.reset-button:hover {
+  background-color: #5E5E5E; 
+}

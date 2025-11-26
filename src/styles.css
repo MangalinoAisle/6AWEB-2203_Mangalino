@@ -1,0 +1,29 @@
+/* styles.css - Universal Sizing and Base Font */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    /* Sets 1rem = 10px for easier sizing */
+    font-size: 62.5%; 
+}
+
+body {
+    /* Sets the base font size for the whole document (1.6rem = 16px) */
+    font-size: 1.6rem; 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #FFF8F5; /* Cahaya Dewi Theme Background */
+    color: #4A4A4A;
+}
+
+/* Headings Normalization */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}

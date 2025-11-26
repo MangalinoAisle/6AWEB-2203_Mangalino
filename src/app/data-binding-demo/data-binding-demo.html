@@ -1,0 +1,37 @@
+<h1>Angular Data Binding Demonstration</h1>
+
+<div ngNonBindable>
+  <h2>1. Text Interpolation</h2>
+</div>
+<h3>{{ title }}</h3>
+<p>{{ description }}</p>
+
+<div ngNonBindable>
+  <h2>2. Property Binding</h2>
+</div>
+<img [src]="imageUrl" [width]="w" [height]="h" [alt]="altText">
+
+<div ngNonBindable>
+  <h2>3. Style Binding</h2>
+</div>
+<p [style.color]="textColor">This text is blue!</p>
+
+<div ngNonBindable>
+  <h2>4. Class Binding</h2>
+</div>
+<p [class.highlighted]="isHighlighted">This text is class-bound.</p>
+
+<div ngNonBindable>
+  <h2>5. Two-Way Data Binding</h2>
+</div>
+<input [(ngModel)]="yourName" placeholder="Mangalino, Gianne Aisle B.">
+<p>Hello, {{ yourName }}!</p>
+
+<div ngNonBindable>
+  <h2>6. Event Binding</h2>
+</div>
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Decrement</button>
+<button (click)="count = 0" class="reset-button">Reset Count</button> 
+<button class="submit-button">Submit Demo</button>
+<p>Count: **{{ count }}**</p>

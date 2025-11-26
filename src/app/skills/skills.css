@@ -1,0 +1,135 @@
+/* skills.css - FINAL TWO-COLUMN LAYOUT, SIZING, AND CAHAYA DEWI THEME */
+
+/* --- 1. HOST & SIZING FIXES (To fit the main organized container) --- */
+
+:host {
+    /* Ensures the component block fills 100% width of the main container */
+    display: block;
+    width: 100%;
+    /* Removes external margins/padding so the global layout handles spacing */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Base style for all internal sections, removing external visual clutter */
+.profile-section,
+.why-hire-section,
+.skills-section {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 0 25px 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* --- 2. TWO-COLUMN GRID LAYOUT (Profile & Skills) --- */
+
+.skills-grid-container {
+    display: grid;
+    /* Creates two columns: 3 parts for Profile, 2 parts for Skills */
+    grid-template-columns: 3fr 2fr; 
+    gap: 40px; 
+    padding: 20px 0; 
+    /* Creates the visual division line in the middle */
+    border-bottom: 1px solid #E0E0E0; 
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+/* --- 3. COLUMN STYLES --- */
+
+/* Left Column Styling (Personal Profile) */
+.profile-section {
+    margin-bottom: 0 !important; /* Prevents double margin inside grid */
+    padding-right: 20px; 
+    /* Adds the subtle vertical border between the two columns */
+    border-right: 1px solid #E0E0E0; 
+}
+
+/* Profile Content Text Styling */
+.profile-content {
+    margin-top: 15px;
+}
+
+.profile-text {
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 1.05rem;
+    color: #4A4A4A; /* Dark text */
+    line-height: 1.65;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+/* Right Column Styling (Key Skills) */
+.skills-section {
+    margin-bottom: 0 !important; 
+    padding-left: 20px;
+}
+
+/* --- 4. THEME & TYPOGRAPHY --- */
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #4A4A4A; 
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #B37C70; /* Terracotta Line */
+    text-transform: uppercase;
+}
+
+/* Skills List Formatting */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #4A4A4A; 
+    line-height: 1.6;
+}
+
+.skills-list li::before {
+    content: "•";
+    position: absolute;
+    left: 5px;
+    color: #B37C70; /* Terracotta bullet */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- 5. RESPONSIVE DESIGN --- */
+
+@media (max-width: 768px) {
+    .skills-grid-container {
+        /* Stack columns vertically on smaller screens */
+        grid-template-columns: 1fr;
+        gap: 20px;
+        border-bottom: none; /* Remove horizontal line when stacked */
+        padding-bottom: 0;
+    }
+    
+    .profile-section {
+        border-right: none; /* Remove vertical line when stacked */
+        padding-right: 0;
+        margin-bottom: 25px !important;
+    }
+
+    .skills-section {
+        padding-left: 0;
+        margin-bottom: 0 !important;
+    }
+}
