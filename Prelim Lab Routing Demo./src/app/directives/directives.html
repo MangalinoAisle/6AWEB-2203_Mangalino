@@ -1,0 +1,146 @@
+<nav class="navbar">
+  <div class="nav-brand">Angular Lab</div>
+  <ul class="nav-links">
+    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/directives" routerLinkActive="active">Directives</a></li>
+    <li><a routerLink="/data-binding" routerLinkActive="active">Data Binding</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <header class="page-header">
+    <h1>Angular Directives</h1>
+    <!-- Fixed: Escaped @ symbols to &#64; -->
+    <p class="subtitle">Demonstrating Control Flow (&#64;if, &#64;for, &#64;switch)</p>
+  </header>
+
+  <div class="content-grid">
+
+    <!-- Card 1: @if Conditional -->
+    <section class="card">
+      <!-- Fixed: Escaped @ -->
+      <h2>&#64;if Conditional</h2>
+      <div class="card-body">
+        @if(isStaticNoteVisible) {
+          <div class="alert alert-success">
+            This is a static note with true value!
+          </div>
+        } @else {
+          <div class="alert alert-secondary">
+            This static note has false value.
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Card 2: Visibility Toggle -->
+    <section class="card">
+      <h2>Visibility Control</h2>
+      <div class="card-body">
+        <div class="status-box">
+            @if(isNoteVisible) {
+              <p class="note-text">✨ This is a note! ✨</p>
+            }
+        </div>
+        <div class="button-group">
+          <button (click)="showNote()" class="btn-primary">Show</button>
+          <button (click)="hideNote()" class="btn-secondary">Hide</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card 3: Toggle Paragraph -->
+    <section class="card">
+      <h2>Toggle Logic</h2>
+      <div class="card-body">
+        <button (click)="toggleNote()" class="btn-primary">
+          {{ isParagraphVisible ? 'Hide' : 'Show' }} Paragraph
+        </button>
+
+        @if (isParagraphVisible) {
+          <p class="fade-in-text">Jann Carl Dungo an aspiring Web Developer from Holy Angel University.</p>
+        }
+      </div>
+    </section>
+
+    <!-- Card 4: Static Switch -->
+    <section class="card">
+      <!-- Fixed: Escaped @ -->
+      <h2>&#64;switch (Static)</h2>
+      <div class="card-body">
+        <div class="month-display">
+          @switch (monthNameStatic) {
+            @case ('Jan') { <span class="badge">January</span> }
+            @case ('Feb') { <span class="badge">February</span> }
+            @case ('Mar') { <span class="badge">March</span> }
+            @default { <span class="badge">Unknown</span> }
+          }
+        </div>
+        <p class="small-text">Current Value: {{monthNameStatic}}</p>
+      </div>
+    </section>
+
+    <!-- Card 5: Dynamic Switch -->
+    <section class="card">
+      <!-- Fixed: Escaped @ -->
+      <h2>&#64;switch (Dynamic)</h2>
+      <div class="card-body">
+        <input type="text" [(ngModel)]="monthNameDynamic" placeholder="Jan, Feb, Mar..." class="form-input">
+
+        <div class="result-area">
+          @switch (monthNameDynamic) {
+            @case ('Jan') { <p>January</p> }
+            @case ('Feb') { <p>February</p> }
+            @case ('Mar') { <p>March</p> }
+            @default { <p class="error-text">Wrong input!</p> }
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Card 6: @for Loop -->
+    <section class="card">
+      <!-- Fixed: Escaped @ -->
+      <h2>&#64;for Loop (Array)</h2>
+      <div class="card-body">
+        <ul class="styled-list">
+          @for (item of cityList; track $index) {
+            <li>{{item}}</li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- Full Width Card: Student Table -->
+    <section class="card full-width">
+      <h2>Student List Data</h2>
+      <div class="card-body">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Course</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of studentList; track $index) {
+              <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.stud_name}}</td>
+                <td>{{item.course}}</td>
+                <td>
+                  <span [class.status-active]="item.isActive" [class.status-inactive]="!item.isActive">
+                    {{ item.isActive ? 'Active' : 'Inactive' }}
+                  </span>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</div>

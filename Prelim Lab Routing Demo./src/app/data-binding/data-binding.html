@@ -1,0 +1,53 @@
+<nav class="navbar">
+  <div class="nav-brand">Angular Lab</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="/directives">Directives</a></li>
+    <li><a href="/data-binding" class="active">Data Binding</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <header class="page-header">
+    <h1>{{ studentName }}</h1>
+    <p class="subtitle">Data Binding Demonstration</p>
+  </header>
+
+  <div class="content-grid">
+    <!-- Property Binding Card -->
+    <section class="card">
+      <h2>Property Binding</h2>
+      <div class="card-body">
+        <div class="image-container">
+          <img [src]="imageUrl" alt="Random Image" />
+        </div>
+        <div class="action-area">
+          <button [disabled]="isDisabled" class="btn-primary">Submit</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Class Binding Card -->
+    <section class="card">
+      <h2>Class Binding</h2>
+      <div class="card-body">
+        <p [class.passing]="isPassing" [class.failing]="!isPassing" class="status-text">
+          Student Result: <strong>{{ isPassing ? 'Passed' : 'Failed' }}</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- Style Binding Card -->
+    <section class="card">
+      <h2>Style Binding</h2>
+      <div class="card-body">
+        <div
+          [style.background]="boxColor"
+          [style.width]="boxSize"
+          [style.height]="boxSize"
+          class="box">
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
