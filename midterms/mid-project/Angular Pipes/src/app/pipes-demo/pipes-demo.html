@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="header-section">
+        <h2>Angular <span>Pipes</span></h2>
+        <p>Mangalino, Gianne Aisle B. | WD-303</p>
+        <button (click)="getNewDate()" class="btn-refresh">
+            Refresh System Date
+        </button>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Date Pipes</h3>
+            <small>Formats a date object into a readable string.</small>
+            <p><strong>Standard:</strong> {{presentDate | date }}</p>
+            <p><strong>Short:</strong> {{presentDate | date:'shortDate' }}</p>
+            <p><strong>Full:</strong> {{presentDate | date:'fullDate' }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Async Pipe</h3>
+            <small>Unwraps values from asynchronous primitives like Observables.</small>
+            <p><strong>Chained:</strong> {{presentDate | date:'fullDate' | uppercase}}</p>
+            <p><strong>Clock:</strong> {{ time$ | async | date:'mediumTime' }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Currency Pipe</h3>
+            <small>Transforms numbers into formatted currency strings.</small>
+            <p><strong>Default:</strong> {{ price | currency:'':true }}</p>
+            <p><strong>INR:</strong> {{ price | currency:'INR' }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Slice Pipe</h3>
+            <small>Returns a subset of an array based on indices.</small>
+            <p><strong>Range (1:4):</strong> {{ Fruits | slice:1:4 }}</p>
+            <p><strong>Negative (-2):</strong> {{ Fruits | slice:-2 }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Decimal Pipe</h3>
+            <small>Formats numbers with specific decimal places.</small>
+            <p><strong>Format 3.1:</strong> {{ decimalNum1 | number:'3.1' }}</p>
+            <p><strong>Format 2.1-4:</strong> {{ decimalNum1 | number:'2.1-4' }}</p>
+        </div>
+
+        <div class="card">
+            <h3>TitleCase Pipe</h3>
+            <small>Capitalizes the first letter of each word.</small>
+            <p><strong>Result:</strong> {{ testTitle | titlecase }}</p>
+        </div>
+
+        <div class="card">
+            <h3>KeyValue Pipe</h3>
+            <small>Transforms an object into an array of key-value pairs.</small>
+            <div *ngFor="let item of objectData | keyvalue">
+                <p><strong>{{ item.key | titlecase }}:</strong> {{ item.value }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Json Pipe (Debug)</h3>
+            <small>Converts objects into JSON strings for debugging.</small>
+            <pre>{{ objectData | json }}</pre>
+        </div>
+    </div>
+</div>

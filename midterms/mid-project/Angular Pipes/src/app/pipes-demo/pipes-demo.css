@@ -1,0 +1,110 @@
+:root {
+  --solar-yellow: #f8e71c;
+  --bg-pastel: #fdfbfb;
+  --text-main: #4a4a4a;
+  /* Pastel Palette for Hovers */
+  --p-blue: #d4eaf7;
+  --p-pink: #f9d8d6;
+  --p-green: #d1e8e2;
+  --p-yellow: #fff2cc;
+  --p-purple: #e2d1f9;
+  --p-orange: #ffe5d9;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  padding: 40px;
+  background-color: var(--bg-pastel);
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.header-section {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.subtitle {
+  color: #a2c2e1;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+h2 { font-size: 3.5rem; margin: 0; font-weight: 300; }
+h2 span { color: #a2c2e1; font-weight: 800; }
+
+.btn-generate {
+  background: #a2c2e1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+
+.btn-generate:hover { transform: scale(1.05); background: #8fb3d1; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Unique Pastel Hovers */
+.card:nth-child(1):hover { background-color: var(--p-blue); }
+.card:nth-child(2):hover { background-color: var(--p-pink); }
+.card:nth-child(3):hover { background-color: var(--p-green); }
+.card:nth-child(4):hover { background-color: var(--p-yellow); }
+.card:nth-child(5):hover { background-color: var(--p-purple); }
+.card:nth-child(6):hover { background-color: var(--p-orange); }
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+h3 { color: #333; margin: 0 0 10px 0; font-size: 1.3rem; }
+small { display: block; color: #888; margin-bottom: 15px; font-style: italic; }
+p { margin: 10px 0; font-size: 0.95rem; }
+strong { color: #555; }
+
+pre {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #d63384;
+}
+
+/* Live Clock Pulse */
+.pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #a2c2e1;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% { box-shadow: 0 0 0 0px rgba(162, 194, 225, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(162, 194, 225, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(162, 194, 225, 0); }
+}
