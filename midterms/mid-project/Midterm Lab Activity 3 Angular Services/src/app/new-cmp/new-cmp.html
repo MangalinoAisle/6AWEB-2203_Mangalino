@@ -1,0 +1,18 @@
+<div style="border-top: 3px dashed #fbcfe8; padding-top: 30px; text-align: center;">
+
+  <p style="font-family: 'Fraunces', serif; font-size: 1.3rem; color: #9f1239; margin-bottom: 20px;">
+    {{ newcomponent }}
+  </p>
+
+  <p style="color: #be185d; margin-bottom: 10px;">
+    Today's date: <br>
+    <span class="price-pill" style="background-color: #be185d; color: white; padding: 5px 15px; border-radius: 20px;">
+      {{ todaydate | date:'fullDate' }} {{ todaydate | date:'mediumTime' }}
+    </span>
+  </p>
+
+  <p style="font-size: 1.2rem; font-weight: bold; color: #831843; margin-top: 15px;">
+    {{ componentproperty }}
+  </p>
+
+</div>
