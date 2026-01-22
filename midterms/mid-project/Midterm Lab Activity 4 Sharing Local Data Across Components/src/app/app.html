@@ -1,0 +1,71 @@
+<div class="hero-wave">
+  <h1 class="hero-title">Sharing Local Data Across Components</h1>
+  <span class="hero-subtitle">Midterm Lab Activity 4</span>
+</div>
+
+<div class="container">
+
+  <div class="aesthetic-card card-light">
+    <div class="section-header">
+      <h2 class="section-title">✿ Meet The Team ✿</h2>
+      <p>The people behind the magic</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Role / Last Name</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (emp of employees; track emp.id) {
+          <tr>
+            <td>#{{ emp.id }}</td>
+            <td style="font-weight: bold;">{{ emp.firstname }}</td>
+            <td>{{ emp.lastname }}</td>
+            <td style="font-size: 0.9rem;">{{ emp.email }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aesthetic-card card-dark">
+    <div class="section-header">
+      <h2 class="section-title">✦ Our Services ✦</h2>
+      <p style="color: #fbcfe8;">Packages & Products available</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Item</th>
+          <th>Details</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (prod of products; track prod.id) {
+          <tr>
+            <td style="opacity: 0.8;">{{ prod.id }}</td>
+            <td style="font-weight: bold; font-size: 1.1rem;">{{ prod.name }}</td>
+            <td style="font-size: 0.9rem; opacity: 0.9;">{{ prod.description }}</td>
+            <td>₱ {{ prod.price }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer-wave">
+  <h2 style="font-family: 'Fraunces', serif; margin-bottom: 20px;">Mangalino, Gianne Aisle B.</h2>
+  <p>WD-303</p>
+  <br>
+  <small>january 21, 2026 </small>
+</div>
