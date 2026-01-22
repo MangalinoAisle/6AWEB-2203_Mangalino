@@ -1,0 +1,70 @@
+<div class="hero-wave">
+  <h1 class="hero-title">REST API and HTTP Client Setup</h1>
+  <p class="hero-subtitle">Midterm Lab Activity 5</p>
+</div>
+
+<div class="container">
+
+  <div class="aesthetic-card">
+    <div class="flower-header">
+      <div class="flower-icon">☁</div>
+      <h2 class="section-title">List From Main</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of httpUsers; track user.id) {
+          <tr>
+            <td style="opacity: 0.7;">#{{ user.id }}</td>
+            <td style="font-weight: 600;">{{ user.name }}</td>
+            <td style="color: #be185d;">{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td><span class="price-pill">{{ user.website }}</span></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aesthetic-card">
+    <div class="flower-header">
+      <div class="flower-icon" style="background: #be185d;">★</div>
+      <h2 class="section-title">Challenge: Top 5 Posts</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Post ID</th>
+          <th>Title</th>
+          <th>Content Snippet</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (post of httpPosts; track post.id) {
+          <tr>
+            <td style="font-weight: bold; color: #be185d;">P-{{ post.id }}</td>
+            <td style="font-weight: 600; text-align: left;">{{ post.title }}</td>
+            <td style="font-size: 0.9rem; opacity: 0.8; text-align: left;">
+              {{ post.body | slice:0:50 }}...
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer-wave">
+  <p style="font-size: 1.2rem; font-family: 'Fraunces', serif; margin: 0;">
+    Mangalino, Gianne Aisle B | WD-303
+  </p>
+</div>
