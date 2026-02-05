@@ -1,0 +1,10 @@
+.post-item {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+.post-item:last-child {
+  border-bottom: none;
+}
+.search-box {
+  margin-bottom: 2rem;
+}

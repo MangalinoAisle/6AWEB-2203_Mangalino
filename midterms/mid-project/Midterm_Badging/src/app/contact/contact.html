@@ -1,0 +1,48 @@
+<div class="card-white" style="text-align: left;">
+  <h2 style="text-align: center; color: #b01c56; font-family: 'Georgia', serif;">✉️ Custom Orders</h2>
+  <p class="subtitle" style="text-align: center;">Let us design your dream bouquet</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 2rem;">
+
+    <form (ngSubmit)="submit()">
+      <div style="margin-bottom: 20px;">
+        <label style="font-weight: bold; color: #b01c56; display: block; margin-bottom: 5px;">Your Name</label>
+        <input [(ngModel)]="name" name="name" placeholder="e.g. Rose Tyler" required>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label style="font-weight: bold; color: #b01c56; display: block; margin-bottom: 5px;">Email Address</label>
+        <input [(ngModel)]="email" name="email" placeholder="rose@example.com" required>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label style="font-weight: bold; color: #b01c56; display: block; margin-bottom: 5px;">Flower Preferences / Note</label>
+        <textarea [(ngModel)]="message" name="message" rows="4" placeholder="I would like pink peonies..."></textarea>
+      </div>
+
+      <button type="submit" style="width: 100%;">SEND INQUIRY</button>
+    </form>
+
+    <div style="background: #fff0f5; padding: 30px; border-radius: 20px; border: 1px dashed #ff66b2;">
+      <h3 style="margin-top: 0; color: #b01c56;">Order Preview</h3>
+      <p style="font-size: 0.9rem; color: #777; margin-bottom: 20px;">
+        Please review your details before submitting.
+      </p>
+
+      <div style="margin-bottom: 15px;">
+        <small style="text-transform: uppercase; color: #999; font-size: 0.7rem;">Customer</small>
+        <div style="font-weight: bold; font-size: 1.1rem; color: #b01c56;">{{ name | uppercase }}</div>
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <small style="text-transform: uppercase; color: #999; font-size: 0.7rem;">Contact</small>
+        <div>{{ email || '...' }}</div>
+      </div>
+
+      <div>
+        <small style="text-transform: uppercase; color: #999; font-size: 0.7rem;">Request</small>
+        <div style="font-style: italic; color: #555;">"{{ message || '...' }}"</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="card-white" style="text-align: left;">
+
+  <h2 style="color: #333; margin-top: 0; display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 1.5rem;">☰</span> Services
+  </h2>
+
+  <input
+    type="text"
+    placeholder="Search by title or body..."
+    [(ngModel)]="searchTerm"
+    (input)="filter()"
+    style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px; font-size: 1rem; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);"
+  >
+
+  <div *ngIf="isLoading" style="color: #b01c56; font-weight: bold; margin: 2rem 0; text-align: center;">
+    ⏳ Loading floral catalog...
+  </div>
+
+  <div *ngIf="errorMessage" style="background: #ffcccc; color: #cc0000; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+    ⚠ {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!isLoading && !errorMessage">
+    <div *ngFor="let post of filteredPosts | slice:0:6" class="data-row" style="border-bottom: 1px solid #eee; padding: 15px 0;">
+
+      <div style="width: 15%; opacity: 0.6; font-family: monospace; font-size: 0.9rem; color: #b01c56;">
+        FLW-{{ post.id }}
+      </div>
+
+      <div style="width: 85%;">
+        <strong style="display: block; font-size: 1.1rem; color: #333; margin-bottom: 4px;">
+          {{ post.title }}
+        </strong>
+        <p style="margin: 0; color: #666; font-size: 0.95rem; line-height: 1.5;">
+          {{ post.body | truncate:50 }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

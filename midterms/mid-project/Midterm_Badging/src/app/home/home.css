@@ -1,0 +1,16 @@
+ul {
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 1.5rem;
+}
+strong {
+  display: block; /* Puts title on its own line */
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}

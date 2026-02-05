@@ -1,0 +1,46 @@
+<div class="card-white" style="text-align: left; border: 2px solid #ffdde5;">
+
+  <div style="text-align: center; margin-bottom: 2rem;">
+    <h2 style="color: #b01c56; font-family: 'Georgia', serif; font-size: 2.2rem; margin: 0;">
+      🌷 Welcome to, Flower Shop!
+    </h2>
+    <p style="color: #ff66b2; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-top: 5px;">
+      Fresh Flowers • Events • Delivery
+    </p>
+  </div>
+
+  <div style="background: #fff0f5; padding: 1.5rem; border-radius: 15px; margin-bottom: 2.5rem; border-left: 5px solid #ff66b2;">
+    <h3 style="color: #333; margin-top: 0;">Welcome to our garden!</h3>
+    <p style="color: #666; line-height: 1.6; margin: 0;">
+      We source the freshest blooms from local growers to create stunning arrangements for any occasion.
+      This portal pulls our <strong style="color: #b01c56;">live inventory updates</strong> directly from our remote database.
+    </p>
+  </div>
+
+  <!--LATEST5 UPDATES-->
+  <h3 style="color: #b01c56; border-bottom: 1px dashed #ff66b2; padding-bottom: 10px; margin-bottom: 1.5rem;">
+    📢 Shop Announcements
+  </h3>
+
+    <!--5 POSTS-->
+  <div *ngIf="posts$ | async as posts">
+    <div *ngFor="let post of posts | slice:0:5" style="margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        <span style="background: #ff66b2; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; box-shadow: 0 2px 5px rgba(255,105,180,0.4);">
+          NEW
+        </span>
+        <strong style="color: #4a1d2f; font-size: 1.1rem; font-family: 'Georgia', serif;">
+          {{ post.title | uppercase }}
+        </strong>
+      </div>
+      <p style="margin: 0; color: #555; font-size: 0.95rem; line-height: 1.6; padding-left: 5px;">
+        {{ post.body }}
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="!(posts$ | async)" style="text-align: center; color: #ff66b2; font-style: italic; margin-top: 2rem;">
+    🌺 Gathering fresh blooms...
+  </div>
+
+</div>
