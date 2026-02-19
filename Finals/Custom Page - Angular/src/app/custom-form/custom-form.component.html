@@ -1,0 +1,79 @@
+<div class="max-w-lg w-full mx-auto p-10 bg-cardbg border border-white/10 rounded-[2rem] shadow-2xl relative overflow-hidden">
+
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-neon shadow-[0_0_20px_#ccff00]"></div>
+
+  <h2 class="text-4xl font-serif italic mb-8 text-center tracking-wide">
+    Custom <br>
+    <span class="text-gray-400 font-sans not-italic text-2xl">Project Inquiry</span>
+  </h2>
+
+  <form [formGroup]="customForm" (ngSubmit)="onSubmit()" class="space-y-5">
+
+    <div class="flex flex-col">
+      <input type="text" formControlName="projectName" placeholder="Project Name"
+             class="px-6 py-4 bg-transparent border border-white/20 rounded-full focus:outline-none focus:border-neon text-sm placeholder-gray-500">
+
+      <span class="text-[0.7rem] text-red-500 mt-2 px-4 uppercase tracking-wider font-semibold"
+            *ngIf="f['projectName'].invalid && (f['projectName'].touched || f['projectName'].dirty || submitted)">
+        4-12 chars (letters/numbers/_)
+      </span>
+    </div>
+
+    <div class="flex flex-col">
+      <input type="email" formControlName="clientEmail" placeholder="Your Email"
+             class="px-6 py-4 bg-transparent border border-white/20 rounded-full focus:outline-none focus:border-neon text-sm placeholder-gray-500">
+
+      <span class="text-[0.7rem] text-red-500 mt-2 px-4 uppercase tracking-wider font-semibold"
+            *ngIf="f['clientEmail'].invalid && (f['clientEmail'].touched || f['clientEmail'].dirty || submitted)">
+        Enter a valid email
+      </span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <select formControlName="serviceType" class="px-6 py-4 bg-darkbg border border-white/20 rounded-full text-sm text-gray-300 appearance-none">
+        <option value="" disabled selected>Select Service...</option>
+        <option value="UI/UX">UI/UX Design</option>
+        <option value="WebDev">Web Development</option>
+      </select>
+
+      <div class="flex items-center gap-3 px-6 py-4 border border-white/20 rounded-full">
+         <label class="text-[0.65rem] text-gray-400 uppercase tracking-widest font-semibold">Urgent?</label>
+         <input type="checkbox" formControlName="urgency" class="accent-neon">
+      </div>
+    </div>
+
+    <textarea formControlName="description" rows="3" placeholder="Brief project description..."
+              class="w-full px-6 py-4 bg-transparent border border-white/20 rounded-2xl focus:outline-none focus:border-neon text-sm resize-none"></textarea>
+
+    <button type="submit" [disabled]="customForm.invalid"
+            class="w-full py-4 mt-4 rounded-full font-bold text-black bg-neon hover:bg-[#aadd00] transition-colors disabled:opacity-30 uppercase tracking-widest text-xs">
+      SUBMIT INQUIRY
+    </button>
+  </form>
+
+  <div *ngIf="submissionData" class="mt-8 p-6 bg-white/5 border border-white/10 rounded-2xl text-white">
+    <h3 class="text-xl font-serif italic text-neon mb-4">Inquiry Received:</h3>
+    <div class="space-y-2 text-sm">
+      <p>
+        <span class="text-gray-400 uppercase tracking-widest text-xs">Project:</span>
+        {{ submissionData.projectName }}
+      </p>
+      <p>
+        <span class="text-gray-400 uppercase tracking-widest text-xs">Email:</span>
+        {{ submissionData.clientEmail }}
+      </p>
+      <p>
+        <span class="text-gray-400 uppercase tracking-widest text-xs">Service:</span>
+        {{ submissionData.serviceType }}
+      </p>
+      <p>
+        <span class="text-gray-400 uppercase tracking-widest text-xs">Priority:</span>
+        {{ submissionData.urgency ? 'Urgent' : 'Standard' }}
+      </p>
+      <p>
+        <span class="text-gray-400 uppercase tracking-widest text-xs">Description:</span>
+        {{ submissionData.description }}
+      </p>
+    </div>
+  </div>
+</div>
