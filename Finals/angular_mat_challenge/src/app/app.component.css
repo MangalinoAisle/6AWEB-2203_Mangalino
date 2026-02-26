@@ -1,0 +1,29 @@
+.main-nav {
+  background: rgba(20, 13, 36, 0.95) !important;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 40px;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #d8b4fe;
+}
+
+.spacer { flex: 1 1 auto; }
+
+.nav-links button {
+  margin-left: 15px;
+  font-weight: 500;
+  color: #e4e4e7 !important;
+}
+
+.active-link {
+  color: #d8b4fe !important;
+  border-bottom: 2px solid #d8b4fe;
+  border-radius: 0;
+}
